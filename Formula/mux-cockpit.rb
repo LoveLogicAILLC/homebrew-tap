@@ -76,7 +76,8 @@ class MuxCockpit < Formula
       "#{bin}/mux-cockpit" -sock "$SOCK"
     SHELL
 
-    chmod 0755, bin/"mux-host", bin/"mux-stack"
+    chmod 0755, bin/"mux-host"
+    chmod 0755, bin/"mux-stack"
   end
 
   test do
