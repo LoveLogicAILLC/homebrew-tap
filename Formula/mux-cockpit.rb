@@ -45,7 +45,7 @@ class MuxCockpit < Formula
         rm -f "$SOCK"
         exit "$code"
       }
-      trap cleanup EXIT INT TERM
+      trap cleanup EXIT HUP INT TERM
 
       if [[ "$PROVIDER" == "openai" && -z "${OPENAI_API_KEY:-}" && -z "${OPENAI_BASE_URL:-}" ]]; then
         echo "mux-stack: OPENAI_API_KEY or OPENAI_BASE_URL is required (or set MUX_PROVIDER=mock/ollama/gemini)" >&2
