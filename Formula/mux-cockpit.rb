@@ -19,7 +19,7 @@ class MuxCockpit < Formula
     libexec.install "harness", "host_orchestrator.py", "mux_router.py",
                     "morph_engine.py", "cockpit_integration.py"
 
-    python = Formula["python@3.14"].opt_bin/"python3.14"
+    python = formula_opt_bin("python@3.14")/"python3.14"
     (bin/"mux-host").write <<~SHELL
       #!/usr/bin/env bash
       exec "#{python}" "#{libexec}/host_orchestrator.py" "$@"
